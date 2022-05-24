@@ -1,0 +1,251 @@
+{
+	"info": {
+		"_postman_id": "499c2b86-096e-4bda-80f1-58a78e68bb3f",
+		"name": "GitHubDemo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20978490"
+	},
+	"item": [
+		{
+			"name": "GET",
+			"item": [
+				{
+					"name": "GET_All_Issues",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.github.com/repos/VasilevAdr/postman/issues",
+							"protocol": "https",
+							"host": [
+								"api",
+								"github",
+								"com"
+							],
+							"path": [
+								"repos",
+								"VasilevAdr",
+								"postman",
+								"issues"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_Single_Issue",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Check status code, function\")\r",
+									" {\r",
+									"    pm.expect(pm.response.code).to.equal(200);\r",
+									"\r",
+									"};\r",
+									"\r",
+									"pm.test(\"Check status, function\")\r",
+									" {\r",
+									"    pm.expect(pm.response.status).to.equal(\"OK\");\r",
+									"\r",
+									"};\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.github.com/repos/VasilevAdr/postman/issues/1",
+							"protocol": "https",
+							"host": [
+								"api",
+								"github",
+								"com"
+							],
+							"path": [
+								"repos",
+								"VasilevAdr",
+								"postman",
+								"issues",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://github.com/VasilevAdr/postman/issues/3",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://github.com/VasilevAdr/postman/issues/3",
+							"protocol": "https",
+							"host": [
+								"github",
+								"com"
+							],
+							"path": [
+								"VasilevAdr",
+								"postman",
+								"issues",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "POST",
+			"item": [
+				{
+					"name": "https://api.github.com/repos/VasilevAdr/postman/issues",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Check status code, function\")\r",
+									" {\r",
+									"    pm.expect(pm.response.code).to.equal(201);\r",
+									"\r",
+									"};\r",
+									"\r",
+									"pm.test(\"Check status, function\")\r",
+									" {\r",
+									"    pm.expect(pm.response.status).to.equal(\"Created\");\r",
+									"\r",
+									"};"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "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",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "VasilevAdr",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"title\": \"First issue from Postman\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.github.com/repos/VasilevAdr/postman/issues",
+							"protocol": "https",
+							"host": [
+								"api",
+								"github",
+								"com"
+							],
+							"path": [
+								"repos",
+								"VasilevAdr",
+								"postman",
+								"issues"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "UPDATE",
+			"item": []
+		},
+		{
+			"name": "DELETE",
+			"item": [
+				{
+					"name": "POST Copy",
+					"item": [
+						{
+							"name": "https://api.github.com/repos/VasilevAdr/postman/issues",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "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",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "VasilevAdr",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"title\": \"First issue from Postman\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://api.github.com/repos/VasilevAdr/postman/issues",
+									"protocol": "https",
+									"host": [
+										"api",
+										"github",
+										"com"
+									],
+									"path": [
+										"repos",
+										"VasilevAdr",
+										"postman",
+										"issues"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "DELETE",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
